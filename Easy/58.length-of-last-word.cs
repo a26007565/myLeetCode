@@ -25,13 +25,11 @@
  * 
  */
 //   √ Accepted
-//   √ 59/59 cases passed (756 ms)
-//   √ Your runtime beats 0 % of csharp submissions
+//   √ 59/59 cases passed (84 ms)
+//   √ Your runtime beats 91.79 % of csharp submissions
 public class Solution {
-    private static string pattern = @"(?<word>\S+)$";
-
     public int LengthOfLastWord(string s) {
-        var result = System.Text.RegularExpressions.Regex.Match(s.TrimEnd(), pattern).Groups["word"].Value;
-        return result.Length;
+        string[] words = s.TrimEnd().Split(' ');
+        return words[words.Length-1].Length;
     }
 }
